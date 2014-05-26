@@ -1,0 +1,19 @@
+invertDE v1.0
+==============================
+(c)2014 Amin Khozaei
+This extension is GPL-licensed
+
+
+Installation
+==============================
+This extnesion dependent on "xcalib" so you should first install "xcalib" and then activate this extension.
+xcalib is unlder GPL too. for install xcalib from debian and debain-based distro use this command:
+
+	$ sudo apt-get install xcalib
+
+After installation of this program, the extension has working.
+
+
+About invertDE
+==============================
+invertDE inverts color the whole of gnome Desktop Environment. When you read large pdf or web page that background of the text is white your eyes have been tired, this extension help you to read your documents in good feeling.
