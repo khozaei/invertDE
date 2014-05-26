@@ -1,0 +1,1 @@
+{"shell-version": ["3.10.4"], "uuid": "invertde@saaie.ir", "name": "invertDE", "description": "Invert color the whole Gnome Desktop Environment for reading purposes. This extention use xcalib program for inverting the color, so you need to install xcalib first( in debian-based ditro you can use 'sudo apt-get install xcalib'). The github url is: https://github.com/saaie/invertDE"}
