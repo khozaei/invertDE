@@ -48,5 +48,13 @@ function enable() {
 }
 
 function disable() {
+    if(state){
+	Util.spawn(['/usr/bin/xcalib', '-i', '-a']);
+        let icon = new St.Icon({ icon_name: DisabledIcon,
+                             style_class: 'system-status-icon' });
+
+        button.set_child(icon); 	
+	state=false;
+	}
     Main.panel._rightBox.remove_child(button);
 }
