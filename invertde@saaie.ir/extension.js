@@ -9,22 +9,9 @@ const DisabledIcon = 'light-on-symbolic';
 const EnabledIcon = 'light-off-symbolic';
 
 function _toggleInvert(){
-    if(state){
-	state=false;
-        let icon = new St.Icon({ icon_name: DisabledIcon,
-                             style_class: 'system-status-icon' });
-
-        button.set_child(icon);
-        Util.spawn(['/usr/bin/xcalib', '-i', '-a']);
-    }
-    else{
-	state=true;
-        let icon = new St.Icon({ icon_name: EnabledIcon,
-                             style_class: 'system-status-icon' });
-
-        button.set_child(icon);
-        Util.spawn(['/usr/bin/xcalib', '-i', '-a']); 
-    }
+    state=!state;
+    button.child.icon_name=state ? EnabledIcon : DisabledIcon;
+    Util.spawn(['/usr/bin/xcalib', '-i', '-a']); 
 }
 function init(extensionMeta) {
    state=false;
@@ -49,12 +36,7 @@ function enable() {
 
 function disable() {
     if(state){
-	Util.spawn(['/usr/bin/xcalib', '-i', '-a']);
-        let icon = new St.Icon({ icon_name: DisabledIcon,
-                             style_class: 'system-status-icon' });
-
-        button.set_child(icon); 	
-	state=false;
+	_toggleInvert();
 	}
     Main.panel._rightBox.remove_child(button);
 }
